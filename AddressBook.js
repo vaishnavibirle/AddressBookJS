@@ -5,6 +5,7 @@
  * Throw error if regex fails
  * Created new addressbook array and push the contacts in it
  * Finding existing contact and by using first name editing it
+ * Deleting existing contact 
 */
 class Contact {
 
@@ -330,6 +331,31 @@ addressBook.forEach(person => {
             default:
                 console.log("Nothing modified !!");
                 break;
+        }
+    }
+});
+
+if (!status) {
+    console.log("Contact not found !!!");
+}
+
+//UC5 - Ability to Search & Delete existing Contact
+console.log("\n**********Delete Contact**********");
+var input = prompt("Enter First Name to Search Contact: ");
+var status = false;
+addressBook.forEach(person => {
+    if (person.firstName == input) {
+        console.log("\nContact found!");
+        status = true;
+        var option = prompt("Press 'Y' to remove Contact & any key to exit ");
+        if ((option == "Y") ||(option == "y")) {
+            var index = addressBook.indexOf(person);
+            if (index > -1) {
+                addressBook.splice(index,1);
+                console.log("Contact Deleted Successfully !!")
+                console.log("\n*********Display Contacts**********");
+                console.log(addressBook);
+            }
         }
     }
 });
