@@ -377,3 +377,21 @@ var reducer = () => {
 
   const nameCollection = addressBook.reduce(reducer);
   console.log("Address Book has " + nameCollection.size + " Contacts");
+
+  //UC7 - Ability to ensure there is no duplicate Entry in Address Book
+console.log("\n***Check for Duplicate entries****");
+function hasDuplicate(addressBook) {
+    let NAMESet = new Set();
+    let NAMEArray = new Array();
+    addressBook.forEach(contact => {
+      NAMESet.add(contact.name);
+      NAMEArray.push(contact.name);
+    });
+    return NAMESet.size != NAMEArray.length;
+}
+
+if (hasDuplicate(addressBook)) {
+    console.log("Address Book has Duplicate entries");
+} else {
+    console.log("Address Book does not have any Duplicate entries");
+}
