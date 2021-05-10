@@ -363,3 +363,17 @@ addressBook.forEach(person => {
 if (!status) {
     console.log("Contact not found !!!");
 }
+
+//UC6 - Ability to find number of Contacts in Address Book
+//using reduce function
+console.log("\n**********Count Contacts**********");
+var reducer = () => {
+    var nameSet = new Set();
+    addressBook.forEach( contact => {
+        nameSet.add(contact.name);
+    });
+    return nameSet;
+  }
+
+  const nameCollection = addressBook.reduce(reducer);
+  console.log("Address Book has " + nameCollection.size + " Contacts");
