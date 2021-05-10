@@ -3,6 +3,7 @@
  * address, city , state , zip , phone number and email
  * Checking contacts to be in proper pattern 
  * Throw error if regex fails
+ * Created new addressbook array and push the contacts in it
 */
 class Contact {
 
@@ -216,3 +217,9 @@ try {
 } catch (error) {
     console.log(error);
 }
+
+//UC3 - Ability to create Address Book Array & Add Contacts to Array
+var addressBook = new Array();
+addressBook.push(vaishnavi);
+addressBook.push(vaibhavi);
+console.log(addressBook);
