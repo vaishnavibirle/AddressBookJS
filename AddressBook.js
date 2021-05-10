@@ -413,3 +413,19 @@ if (requiredArray.length > 0) {
 } else {
     console.log("Contact not found in " + cityname + " City");
 }
+
+//UC9 - Ability to view contacts by City
+console.log("\n*******View Contacts by City******");
+cityname = "Washim";
+
+let searchByCity = (contact) => {
+    if (contact.city == cityname) {
+        return contact;
+    }
+}
+requiredArray = addressBook.filter(searchByCity);
+
+console.log("Contacts from " + cityname + " City:");
+requiredArray.forEach(contact => {
+    console.log(contact.toString());
+});
